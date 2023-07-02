@@ -7,10 +7,12 @@ const PORT = 5000;
 
 app.use(bodyParser.json())
 app.use(cors())
+app.set("view engine", "ejs")
+app.use("/assets" , express.static("assets"));
 
 
 app.get('/' , (req,res) => {
-    res.send("Hello World")
+    res.render("index")
 })
 
 app.get('/fikirler', (req, res) => {
